@@ -1,6 +1,7 @@
 {
     "name": "reallyli/laravel-uninotify",
-    "description": ["notification", "laravel"],
+    "description": "A simple customized message notification",
+    "keywords": ["notification", "laravel"],
     "license": "MIT",
     "authors": [
         {
