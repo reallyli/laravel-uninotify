@@ -1,0 +1,29 @@
+{
+    "name": "reallyli/laravel-uninotify",
+    "description": ["notification", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "reallyli",
+            "email": "zlireallyli@outlook.com"
+        }
+    ],
+    "require": {
+        "ixudra/curl": "^6.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Reallyli\\Uninotify\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Reallyli\\Uninotify\\UninotifyServiceProvider"
+            ],
+            "aliases": {
+                "Uninotify": "Reallyli\\Uninotify\\Facades\\Uninotify"
+            }
+        }
+    }
+}
