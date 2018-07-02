@@ -33,7 +33,7 @@ class UniNotifyService
      */
     public function __construct(Repository $config)
     {
-        $this->config = $config->get('uniquewaynotify');
+        $this->config = $config->get('uninotify');
     }
 
     /**
