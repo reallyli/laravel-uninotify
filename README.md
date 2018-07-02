@@ -8,6 +8,6 @@ $ composer require reallyli/laravel-uninotify
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Reallyli\Uninotify\UninotifyServiceProvider"
+php artisan vendor:publish --provider="Reallyli\Uninotify\UniNotifyServiceProvider"
 ```
 
