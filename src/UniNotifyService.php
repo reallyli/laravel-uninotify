@@ -68,8 +68,7 @@ class UniNotifyService
         }
 
         throw_unless(
-            array_key_exists($type, $this->config['channel_url']) &&
-            ! $this->config['enabled_throw_exception'],
+            array_key_exists($type, $this->config['channel_url']),
             '\Exception',
             $this->logPrefix . 'Channel url not found'
         );
