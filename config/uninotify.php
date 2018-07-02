@@ -2,7 +2,7 @@
 
 return [
     // Exclude environments that do not receive notifications local,devel,production
-    'execlude_environment' => [
+    'execlude_notify_environment' => [
         'local',
     ],
     // Whether to enable catch exception true or false
