@@ -3,7 +3,7 @@
 ### Installation
 You can install the package via composer:
 ``` bash
-$ composer require reallyli/uninotify
+$ composer require reallyli/laravel-uninotify
 ```
 
 You can publish the config file with:
