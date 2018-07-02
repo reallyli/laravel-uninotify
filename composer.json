@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Reallyli\\Uninotify\\UninotifyServiceProvider"
+                "Reallyli\\Uninotify\\UniNotifyServiceProvider"
             ],
             "aliases": {
                 "Uninotify": "Reallyli\\Uninotify\\Facades\\Uninotify"
