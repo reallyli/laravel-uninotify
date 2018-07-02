@@ -4,6 +4,10 @@ namespace Reallyli\Uninotify;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class UniNotifyServiceProvider
+ * @package Reallyli\Uninotify
+ */
 class UniNotifyServiceProvider extends ServiceProvider
 {
     /**
