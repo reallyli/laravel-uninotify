@@ -5,8 +5,7 @@ namespace Reallyli\Uninotify\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class UniNotify
- * @package Reallyli\Uninotify\Facades
+ * Class UniNotify.
  */
 class UniNotify extends Facade
 {

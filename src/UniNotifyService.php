@@ -2,13 +2,12 @@
 
 namespace Reallyli\Uninotify;
 
+use Ixudra\Curl\Facades\Curl;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\App;
-use Ixudra\Curl\Facades\Curl;
 
 /**
- * Class UniquewayNotificationService
- * @package Reallyli\UniquewayNotification
+ * Class UniquewayNotificationService.
  */
 class UniNotifyService
 {
@@ -23,13 +22,16 @@ class UniNotifyService
     protected $config;
 
     /**
-     * Method description:__construct
+     * Method description:__construct.
      *
      * @author reallyli <zlisreallyli@outlook.com>
+     *
      * @since 18/6/29
+     *
      * @param Repository $config
+     *
      * @return mixed
-     * 返回值类型：string，array，object，mixed（多种，不确定的），void（无返回值）
+     *               返回值类型：string，array，object，mixed（多种，不确定的），void（无返回值）
      */
     public function __construct(Repository $config)
     {
@@ -37,21 +39,24 @@ class UniNotifyService
     }
 
     /**
-     * Method description:send
+     * Method description:send.
      *
      * @author reallyli <zlisreallyli@outlook.com>
+     *
      * @since 18/6/29
+     *
      * @param string $message
      * @param string $type
+     *
      * @return mixed
-     * 返回值类型：string，array，object，mixed（多种，不确定的），void（无返回值）
+     *               返回值类型：string，array，object，mixed（多种，不确定的），void（无返回值）
      */
     public function send(string $message, string $type)
     {
         throw_unless(
             $this->config,
             '\Exception',
-            $this->logPrefix . 'Please publish the configuration file, php artisan vendor:publish'
+            $this->logPrefix.'Please publish the configuration file, php artisan vendor:publish'
         );
 
         $logLevel = in_array($this->config['logger_level'], ['error', 'info', 'debug']) ?
@@ -61,7 +66,8 @@ class UniNotifyService
         if (is_array($this->config['execlude_notify_environment'])) {
             foreach ($this->config['execlude_notify_environment'] as $env) {
                 if ($env === App::environment()) {
-                    logger()->info($this->logPrefix . 'Current environment notify is excluded');
+                    logger()->info($this->logPrefix.'Current environment notify is excluded');
+
                     return true;
                 }
             }
@@ -70,13 +76,13 @@ class UniNotifyService
         throw_unless(
             array_key_exists($type, $this->config['channel_url']),
             '\Exception',
-            $this->logPrefix . 'Channel url not found'
+            $this->logPrefix.'Channel url not found'
         );
 
         throw_unless(
             $this->config['channel_url'][$type],
             '\Exception',
-            $this->logPrefix . 'Channel url not set'
+            $this->logPrefix.'Channel url not set'
         );
 
         try {
@@ -89,12 +95,10 @@ class UniNotifyService
             throw_unless(
                 $this->config['enabled_throw_exception'],
                 '\Exception',
-                $this->logPrefix . $exception->getMessage()
+                $this->logPrefix.$exception->getMessage()
             );
         }
 
         return true;
     }
-
 }
-
