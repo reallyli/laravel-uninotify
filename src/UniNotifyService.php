@@ -2,9 +2,9 @@
 
 namespace Reallyli\Uninotify;
 
+use Ixudra\Curl\Facades\Curl;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\App;
-use Ixudra\Curl\Facades\Curl;
 
 /**
  * Class UniquewayNotificationService.
